@@ -1,0 +1,13 @@
+executor: slurm
+jobs: 100
+default-resources:
+  - slurm_partition=tier3q
+  - runtime=10080
+  - mem_mb=1000000
+  - cpus_per_task=32
+  - nodes=1
+latency-wait: 120
+rerun-incomplete: true
+keep-going: true
+printshellcmds: true
+

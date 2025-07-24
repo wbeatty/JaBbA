@@ -1,0 +1,6 @@
+name: svaba
+channels:
+  - bioconda
+  - conda-forge
+dependencies:
+  - svaba=1.2.0

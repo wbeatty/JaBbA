@@ -1,0 +1,88 @@
+# Snakemake and workflow-related
+.snakemake/
+workflow/.snakemake/
+workflow/.snakemake*/*
+
+# Results and output
+results/
+*.out
+*.log
+*.err
+*.report
+*.html
+*.pdf
+*.svg
+*.png
+*.csv
+*.tsv
+*.xls
+*.xlsx
+*.rds
+*.bed
+*.bam
+*.bai
+*.vcf
+*.vcf.gz
+*.vcf.gz.tbi
+*.fastq
+*.fastq.gz
+*.fq
+*.fq.gz
+*.sam
+*.cram
+*.idx
+*.fai
+*.bw
+*.bigwig
+*.gff
+*.gff3
+*.gtf
+*.counts
+*.tab
+*.tmp
+*.temp
+*.bak
+*.swp
+*.swo
+*.npy
+*.npz
+*.pickle
+*.pkl
+*.h5
+*.hdf5
+*.rdata
+*.rda
+*.rhistory
+*.RData
+.rproj.user/
+
+# SLURM and cluster logs
+slurm-*.out
+*.sbatch
+
+*.secrets*
+
+# Python, R, and general
+__pycache__/
+*.pyc
+*.pyo
+*.Rhistory
+.Rproj.user/
+
+# Misc
+.DS_Store
+Thumbs.db
+gmon.out
+
+# Ignore resource intermediates
+resources/bamtofastq/*.bam
+resources/bamtofastq/*.bam.tmp.*
+
+# Ignore report folders
+workflow/report/
+
+# Ignore other temp and cache files
+*~
+
+!resources/fixed.detergent.rds
+!resources/non_autosomes.sorted.bed

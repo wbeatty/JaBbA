@@ -1,0 +1,7 @@
+name: vembrane
+channels:
+  - bioconda
+  - conda-forge
+dependencies:
+  - python=3.11
+  - vembrane

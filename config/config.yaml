@@ -1,0 +1,10 @@
+BAM_DIR: "/gpfs/data/drazer-lab/Will_Jabba/test_data"
+sample_pairs: [
+    {
+        "patient_id": "MMRF_1020",
+        "sample_name": "MMRF_1020_3",
+        "tumor_bam": "eafe6cee-1a92-45db-ba4a-06cff86434db_wgs_gdc_realn.bam",
+        "normal_bam": "eccae274-68d8-4d8a-b2e6-c5185c12df1b_wgs_gdc_realn.bam",
+    },
+]
+reference: "resources/bwa_mem2_index/hg19.fa"

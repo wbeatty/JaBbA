@@ -1,0 +1,35 @@
+# Snakefile for Jabba analysis workflow
+
+# load config
+# -----------------------------------------------------
+configfile: "config/config.yaml"
+
+# load rules
+# -----------------------------------------------------
+include: "rules/Jabba.smk"
+include: "rules/common.smk"
+
+
+onstart:
+    print("\n--- Analysis started ---\n")
+
+
+onsuccess:
+    print("\n--- Workflow finished! ---\n")
+
+
+onerror:
+    print("\n--- An error occurred! ---\n")
+
+# define global variables
+# -----------------------------------------------------
+sample_pairs = config["sample_pairs"]
+SAMPLES = [pair["sample_name"] for pair in sample_pairs]
+BAM_DIR = config["BAM_DIR"]
+REFERENCE = config["reference"]
+
+rule all:
+    input:
+        expand("results/jabba/{sample}/cleanup.done", sample=SAMPLES),
+        expand("results/jabba/{sample}/jabba.rds", sample=SAMPLES)
+    default_target: True
