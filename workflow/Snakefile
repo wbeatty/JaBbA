@@ -26,7 +26,6 @@ onerror:
 sample_pairs = config["sample_pairs"]
 SAMPLES = [pair["sample_name"] for pair in sample_pairs]
 BAM_DIR = config["BAM_DIR"]
-REFERENCE = config["reference"]
 
 rule all:
     input:

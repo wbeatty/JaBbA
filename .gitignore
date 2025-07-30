@@ -1,9 +1,6 @@
-# Snakemake and workflow-related
 .snakemake/
 workflow/.snakemake/
 workflow/.snakemake*/*
-
-# Results and output
 results/
 *.out
 *.log
@@ -55,35 +52,22 @@ results/
 *.rhistory
 *.RData
 .rproj.user/
-
-# SLURM and cluster logs
 slurm-*.out
 *.sbatch
-
 *.secrets*
-
-# Python, R, and general
 __pycache__/
 *.pyc
 *.pyo
 *.Rhistory
 .Rproj.user/
-
-# Misc
 .DS_Store
 Thumbs.db
 gmon.out
-
-# Ignore resource intermediates
 resources/bamtofastq/*.bam
 resources/bamtofastq/*.bam.tmp.*
 resources/fixed.detergent.rds
 resources/bwa_mem2_index/
-
-# Ignore report folders
 workflow/report/
-
-# Ignore other temp and cache files
 *~
-
 !resources/non_autosomes.sorted.bed
+resources

@@ -204,8 +204,9 @@ rule dryclean:
         "workflow/report/benchmarks/{sample}/dryclean.txt"
     log:
         "workflow/report/logs/{sample}/dryclean.log"
-    conda:
-        "../envs/r.yaml"
+    envmodules:
+        "gcc/12.1.0",
+        "R/4.2.1"
     shell:
         """
         mkdir -p resources/dryclean/{wildcards.sample}

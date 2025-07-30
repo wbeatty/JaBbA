@@ -7,4 +7,3 @@ sample_pairs: [
         "normal_bam": "eccae274-68d8-4d8a-b2e6-c5185c12df1b_wgs_gdc_realn.bam",
     },
 ]
-reference: "resources/bwa_mem2_index/hg19.fa"
