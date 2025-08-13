@@ -80,8 +80,8 @@ rule bwa:
         "../envs/bwa.yaml"
     shell:
         """
-        bwa-mem2 mem -t {threads} resources/bwa_mem2_index/hg19 {input.tumor_r2} | samtools sort -@ {threads} -o {output.tumor_bam}
-        bwa-mem2 mem -t {threads} resources/bwa_mem2_index/hg19 {input.normal_r1} {input.normal_r2} | samtools sort -@ {threads} -o {output.normal_bam}
+        bwa-mem2 mem -t {threads} /gpfs/data/drazer-lab/Will_Jabba/resources/bwa_mem2_index/hg38 {input.tumor_r1} {input.tumor_r2} | samtools sort -@ {threads} -O BAM -o {output.tumor_bam}
+        bwa-mem2 mem -t {threads} /gpfs/data/drazer-lab/Will_Jabba/resources/bwa_mem2_index/hg38 {input.normal_r1} {input.normal_r2} | samtools sort -@ {threads} -O BAM -o {output.normal_bam}
         if [ -f {output.tumor_bam} ] && [ -f {output.normal_bam} ]; then
             echo "Cleaning input files for {wildcards.sample}..."
             rm -f {input.tumor_r1} {input.tumor_r2} {input.normal_r1} {input.normal_r2}
@@ -150,7 +150,7 @@ rule svaba:
         """
         mkdir -p resources/svaba/{wildcards.sample}
         svaba run -t {input.tumor} -n {input.normal} -p {threads} \
-            -a resources/svaba/{wildcards.sample}/MMRF -G resources/bwa_mem2_index/hg19.fa -v 0 > {output.log} 2>&1
+            -a resources/svaba/{wildcards.sample}/MMRF -G /gpfs/data/drazer-lab/Will_Jabba/resources/bwa_mem2_index/hg38.fa -v 0 > {output.log} 2>&1
         """
 rule vembrane_filter_blacklist:
     input:
@@ -190,7 +190,7 @@ rule fragcounter:
         mkdir -p resources/fragcounter/{wildcards.sample}
         /gpfs/data/icelake-apps/software/gcc-12.1.0/R/4.2.1/lib64/R/library/fragCounter/extdata/frag \
             -b {input.bam} \
-            -d /gpfs/data/drazer-lab/Quinn_JaBbA/gc_map \
+            -d /gpfs/data/drazer-lab/Will_Jabba/resources/gc_map \
             -o resources/fragcounter/{wildcards.sample}
         """
 rule dryclean:

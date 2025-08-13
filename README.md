@@ -9,3 +9,5 @@ conda activate snakemake_base
 snakemake --unlock (if needed)
 
 snakemake --sdm conda env-modules --profile workflow/profiles/slurm/ 
+
+nohup snakemake --sdm conda env-modules --profile workflow/profiles/slurm/ --until "fragcounter" > snakemake.out 2>&1 &
