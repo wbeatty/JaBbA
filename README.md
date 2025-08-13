@@ -2,12 +2,12 @@ Snakemake based pipeline for analyzing short-read DNA sequencing data based on J
 
 How to Use (on Randi):
 
-conda env create -f envs/snakemake-base.yaml
+First Time Use:
+conda env create -f envs/snakemake_base.yaml
 
+Everytime:
 conda activate snakemake_base
 
-snakemake --unlock (if needed)
+snakemake --unlock
 
-snakemake --sdm conda env-modules --profile workflow/profiles/slurm/ 
-
-nohup snakemake --sdm conda env-modules --profile workflow/profiles/slurm/ --until "fragcounter" > snakemake.out 2>&1 &
+nohup snakemake --sdm env-modules --profile workflow/profiles/slurm/ > snakemake.out 2>&1 &

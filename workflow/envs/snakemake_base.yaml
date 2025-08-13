@@ -6,4 +6,3 @@ dependencies:
   - python=3.11
   - snakemake=7.32.4
   - snakemake-executor-plugin-slurm
-  - snakemake-scheduler-plugin-poll
