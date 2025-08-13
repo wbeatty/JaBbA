@@ -10,8 +10,9 @@ rule samsort_tumor:
         "workflow/report/benchmarks/{sample}/samsort_tumor.txt"
     log:
         "workflow/report/logs/{sample}/samsort_tumor.log"
-    conda:
-        "../envs/samtools.yaml"
+    envmodules:
+        "gcc/12.1.0", 
+        "samtools/1.18"
     shell:
         "samtools sort -n -@ {threads} -o {output} {input}"
 
@@ -27,8 +28,9 @@ rule samsort_normal:
         "workflow/report/benchmarks/{sample}/samsort_normal.txt"
     log:
         "workflow/report/logs/{sample}/samsort_normal.log"
-    conda:
-        "../envs/samtools.yaml"
+    envmodules:
+        "gcc/12.1.0", 
+        "samtools/1.18"
     shell:
         "samtools sort -n -@ {threads} -o {output} {input}"
 
@@ -47,8 +49,9 @@ rule bamtofastq:
         "workflow/report/benchmarks/{sample}/bamtofastq.txt"
     log:
         "workflow/report/logs/{sample}/bamtofastq.log"
-    conda:
-        "../envs/bedtools.yaml"
+    envmodules:
+        "gcc/12.1.0",
+        "bedtools/2.30.0"
     shell:
         """
         bedtools bamtofastq -i {input.tumor} -fq {output.tumor_r1} -fq2 {output.tumor_r2}
@@ -76,8 +79,10 @@ rule bwa:
         "workflow/report/benchmarks/{sample}/bwa.txt"
     log:
         "workflow/report/logs/{sample}/bwa.log"
-    conda:
-        "../envs/bwa.yaml"
+    envmodules:
+        "gcc/12.1.0",
+        "bwa-mem2/2.2.1",
+        "samtools/1.18"
     shell:
         """
         bwa-mem2 mem -t {threads} /gpfs/data/drazer-lab/Will_Jabba/resources/bwa_mem2_index/hg38 {input.tumor_r1} {input.tumor_r2} | samtools sort -@ {threads} -O BAM -o {output.tumor_bam}
@@ -147,8 +152,9 @@ rule svaba:
         "workflow/report/benchmarks/{sample}/svaba.txt"
     log:
         "workflow/report/logs/{sample}/svaba.log"
-    conda:
-        "../envs/svaba.yaml"
+    envmodules:
+        "gcc/12.1.0",
+        "svaba/1.2.0"
     shell:
         """
         mkdir -p resources/svaba/{wildcards.sample}
