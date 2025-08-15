@@ -3,7 +3,7 @@ jobs: 100
 default-resources:
   - slurm_partition=tier3q
   - runtime=500
-  - mem_mb=5 0000
+  - mem_mb=50000
   - cpus_per_task=32
   - nodes=1
 latency-wait: 120
