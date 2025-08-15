@@ -12,7 +12,7 @@ module purge
 
 source ~/miniconda3/etc/profile.d/conda.sh
 
-conda activate snakemake_driver
+conda activate snakemake_base
 
 snakemake --unlock
 
