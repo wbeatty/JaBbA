@@ -1,7 +1,6 @@
 .snakemake/
 workflow/.snakemake/
 workflow/.snakemake*/*
-results/
 *.out
 *.log
 *.err
@@ -65,9 +64,5 @@ Thumbs.db
 gmon.out
 resources/bamtofastq/*.bam
 resources/bamtofastq/*.bam.tmp.*
-resources/fixed.detergent.rds
-resources/bwa_mem2_index/
-workflow/report/
 *~
 !resources/non_autosomes.sorted.bed
-resources

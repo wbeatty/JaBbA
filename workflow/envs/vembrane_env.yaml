@@ -1,7 +1,9 @@
-name: vembrane
+name: vembrane_env
 channels:
-  - bioconda
   - conda-forge
+  - bioconda
 dependencies:
-  - python=3.11
+  - python=3.10
+  - libdeflate=1.22
+  - pysam>=0.22,<0.25
   - vembrane

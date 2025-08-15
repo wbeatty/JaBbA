@@ -1,5 +1,10 @@
 # Snakefile for Jabba analysis workflow
 
+import sys
+sys.path.append("resources/samples")
+
+from sample_pairs import sample_pairs
+
 # load config
 # -----------------------------------------------------
 configfile: "config/config.yaml"
@@ -23,7 +28,7 @@ onerror:
 
 # define global variables
 # -----------------------------------------------------
-sample_pairs = config["sample_pairs"]
+
 SAMPLES = [pair["sample_name"] for pair in sample_pairs]
 BAM_DIR = config["BAM_DIR"]
 
