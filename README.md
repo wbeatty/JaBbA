@@ -65,3 +65,14 @@ You can Control+F to search for “finished job” and then you can see the roug
 - Feel free to reach out to me via email at wbeatty@umich.edu or wbeatty@protonmail.com
 - Currently there are still some issues with the fragcounter function which may cause errors in output
 
+### Citations
+
+> **Most large structural variants in cancer genomes can be detected without long reads.**
+> Choo, ZN., Behr, J.M., Deshpande, A. et al.
+>
+> _Nat Genet_ 2023 Nov 09. doi: [https://doi.org/10.1038/s41588-023-01540-6](https://doi.org/10.1038/s41588-023-01540-6)
+
+> **Distinct Classes of Complex Structural Variation Uncovered across Thousands of Cancer Genome Graphs**
+> Hadi, Kevin et al.
+>
+> Cell, Volume 183, Issue 1. doi: [https://doi.org/10.1016/j.cell.2020.08.006](https://doi.org/10.1016/j.cell.2020.08.006)
